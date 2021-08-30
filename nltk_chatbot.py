@@ -20,7 +20,7 @@ nltk.download('popular', quiet=True)  # for downloading packages
 # nltk.download('wordnet') # first-time use only
 
 # Reading in the corpus
-with open('dialogue.txt', 'r', encoding='utf8', errors='ignore') as fin:
+with open('dialogue1.txt', 'r', encoding='utf8', errors='ignore') as fin:
     raw = fin.read().lower()
 
 # Tokenisation
@@ -126,43 +126,3 @@ def main():
 if __name__ == '__main__':
     main()
 
-# import logging
-# from telegram.ext import Updater, CommandHandler, MessageHandler, Filters
-
-# # Enable logging
-# logging.basicConfig(format='%(asctime)s - %(name)s - %(levelname)s - %(message)s',
-#                     level=logging.INFO)
-
-# logger = logging.getLogger(__name__)
-
-# def start(update, context):
-#     intro = "My name is Captain. Taking to Moodle"
-#     update.message.reply_text(intro)
-#     update.message.reply_text("Enter username..")
-#     user01 = update.message.text
-#     update.message.reply_text("Enter password..")
-#     pass01 = update.message.text
-#     update.message.reply_text(user01,pass01)
-
-# def echo(update, context):
-#     update.message.reply_text(update.message.text)
-# def error(update, context):
-#     """Log Errors caused by Updates."""
-#     logger.warning('Update "%s" caused error "%s"', update, context.error)    
-
-
-# def main():
-	
-#     updater = Updater(tokentel, use_context=True)
-#     # Get the dispatcher to register handlers
-#     dp = updater.dispatcher
-#     # on noncommand i.e message - echo the message on Telegram
-#     dp.add_handler(CommandHandler("start", start))
-#     dp.add_handler(MessageHandler(Filters.text, echo))
-#     # log all errors
-#     dp.add_error_handler(error)
-#     # Start the Bot
-#     updater.start_polling()
-#     updater.idle()
-# if __name__ == '__main__':
-#     main()
